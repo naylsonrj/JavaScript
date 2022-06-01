@@ -1,0 +1,12 @@
+linha 1
+linha 2
+linha 3
+Teste
+Naylson
+seção
+^# Não
+#@ {}
+[]
+/;´
+´´'
+"dsada'
