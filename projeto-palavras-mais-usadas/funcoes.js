@@ -29,19 +29,23 @@ function lerArquivos(caminhos) {
   return Promise.all(caminhos.map((caminho) => lerArquivo(caminho)));
 }
 
-function elementosTerminadosCom(array, padrao) {
-  return array.filter((el) => el.endsWith(padrao));
+function elementosTerminadosCom(padrao) {
+  return function (array) {
+    return array.filter((el) => el.endsWith(padrao));
+  };
 }
 
-function removerSeVazio(array) {
+function removerElementosSeVazio(array) {
   return array.filter((el) => el.trim());
 }
 
-function removerSeIncluir(array, padrao) {
-  return array.filter((el) => !el.includes(padrao)); // ! = negação
+function removerElementosseIncluir(array, padrao) {
+  return function (array) {
+    return array.filter((el) => !el.includes(padrao)); // ! = negação
+  };
 }
 
-function removerSeApenasNumero(array) {
+function removerElementosSeApenasNumeros(array) {
   return array.filter((el) => {
     const num = parseInt(el.trim());
     return num !== num; // num !== num é verdadeiro se num for NaN
@@ -54,7 +58,7 @@ module.exports = {
   elementosTerminadosCom,
   lerArquivo,
   lerArquivos,
-  removerSeVazio,
-  removerSeIncluir,
-  removerSeApenasNumero,
+  removerElementosSeVazio,
+  removerElementosseIncluir,
+  removerElementosSeApenasNumeros,
 };
