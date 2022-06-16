@@ -41,6 +41,13 @@ function removerSeIncluir(array, padrao) {
   return array.filter((el) => !el.includes(padrao)); // ! = negação
 }
 
+function removerSeApenasNumero(array) {
+  return array.filter((el) => {
+    const num = parseInt(el.trim());
+    return num !== num; // num !== num é verdadeiro se num for NaN
+  });
+}
+
 // exporta as funções para index.js
 module.exports = {
   lerDiretorio,
@@ -49,4 +56,5 @@ module.exports = {
   lerArquivos,
   removerSeVazio,
   removerSeIncluir,
+  removerSeApenasNumero,
 };

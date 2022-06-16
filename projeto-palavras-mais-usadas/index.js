@@ -14,4 +14,5 @@ fn.lerDiretorio(caminho)
   .then((todoConteudo) => todoConteudo.split("\n")) //separa o conteúdo em um array de linhas
   .then((linhas) => fn.removerSeVazio(linhas)) //remove as linhas vazias
   .then((linhas) => fn.removerSeIncluir(linhas, "-->")) //remove as linhas que começam com "-->"
+  .then((linhas) => fn.removerSeApenasNumero(linhas)) //remove as linhas que só contém números
   .then(console.log);
