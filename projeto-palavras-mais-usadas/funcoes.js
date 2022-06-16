@@ -37,6 +37,10 @@ function removerSeVazio(array) {
   return array.filter((el) => el.trim());
 }
 
+function removerSeIncluir(array, padrao) {
+  return array.filter((el) => !el.includes(padrao)); // ! = negação
+}
+
 // exporta as funções para index.js
 module.exports = {
   lerDiretorio,
@@ -44,4 +48,5 @@ module.exports = {
   lerArquivo,
   lerArquivos,
   removerSeVazio,
+  removerSeIncluir,
 };

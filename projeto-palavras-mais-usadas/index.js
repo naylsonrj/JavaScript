@@ -13,4 +13,5 @@ fn.lerDiretorio(caminho)
   .then((conteudos) => conteudos.join("\n")) //junta todos os conteúdos em um único array
   .then((todoConteudo) => todoConteudo.split("\n")) //separa o conteúdo em um array de linhas
   .then((linhas) => fn.removerSeVazio(linhas)) //remove as linhas vazias
+  .then((linhas) => fn.removerSeIncluir(linhas, "-->")) //remove as linhas que começam com "-->"
   .then(console.log);
