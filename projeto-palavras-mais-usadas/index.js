@@ -7,6 +7,6 @@ const fn = require("./funcoes");
 // função path.join() é usada para concatenar caminhos
 const caminho = path.join(__dirname, "./", "legendas");
 // const arquivos = fn.lerDiretorio(caminho);
-fn.lerDiretorio(caminho).then(console.log);
-
-// console.log(arquivos); // retorna o caminho completo dos arquivos na pasta legendas
+fn.lerDiretorio(caminho)
+  .then((arquivos) => fn.elementosTerminadosCom(arquivos, ".srt"))
+  .then(console.log); // somentes arquivos com extensão .srt

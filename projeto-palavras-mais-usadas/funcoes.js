@@ -14,4 +14,12 @@ function lerDiretorio(caminho) {
   });
 }
 
-module.exports = { lerDiretorio }; // exporta a função lerDiretorio para index.js
+function elementosTerminadosCom(array, padrao) {
+  return array.filter((elemento) => elemento.endsWith(padrao));
+}
+
+// exporta as funções para index.js
+module.exports = {
+  lerDiretorio,
+  elementosTerminadosCom,
+};
