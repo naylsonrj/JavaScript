@@ -30,7 +30,11 @@ function lerArquivos(caminhos) {
 }
 
 function elementosTerminadosCom(array, padrao) {
-  return array.filter((elemento) => elemento.endsWith(padrao));
+  return array.filter((el) => el.endsWith(padrao));
+}
+
+function removerSeVazio(array) {
+  return array.filter((el) => el.trim());
 }
 
 // exporta as funções para index.js
@@ -39,4 +43,5 @@ module.exports = {
   elementosTerminadosCom,
   lerArquivo,
   lerArquivos,
+  removerSeVazio,
 };
