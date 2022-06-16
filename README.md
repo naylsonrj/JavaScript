@@ -4,11 +4,6 @@
 
 > Scripts e testes de cursos Javascripts
 
-## Install
-
-```sh
-npm install
-```
 
 ## Author
 
