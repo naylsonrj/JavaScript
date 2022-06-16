@@ -14,6 +14,21 @@ function lerDiretorio(caminho) {
   });
 }
 
+function lerArquivo(caminho) {
+  return new Promise((resolve, reject) => {
+    try {
+      const conteudo = fs.readFileSync(caminho, { encoding: "utf-8" });
+      resolve(conteudo.toString());
+    } catch (erro) {
+      reject(erro);
+    }
+  });
+}
+// retorna um array de promisses
+function lerArquivos(caminhos) {
+  return Promise.all(caminhos.map((caminho) => lerArquivo(caminho)));
+}
+
 function elementosTerminadosCom(array, padrao) {
   return array.filter((elemento) => elemento.endsWith(padrao));
 }
@@ -22,4 +37,6 @@ function elementosTerminadosCom(array, padrao) {
 module.exports = {
   lerDiretorio,
   elementosTerminadosCom,
+  lerArquivo,
+  lerArquivos,
 };

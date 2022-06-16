@@ -9,4 +9,5 @@ const caminho = path.join(__dirname, "./", "legendas");
 // const arquivos = fn.lerDiretorio(caminho);
 fn.lerDiretorio(caminho)
   .then((arquivos) => fn.elementosTerminadosCom(arquivos, ".srt"))
+  .then((arquivosSRT) => fn.lerArquivos(arquivosSRT))
   .then(console.log); // somentes arquivos com extensão .srt
