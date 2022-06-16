@@ -10,4 +10,7 @@ const caminho = path.join(__dirname, "./", "legendas");
 fn.lerDiretorio(caminho)
   .then((arquivos) => fn.elementosTerminadosCom(arquivos, ".srt"))
   .then((arquivosSRT) => fn.lerArquivos(arquivosSRT))
-  .then(console.log); // somentes arquivos com extensão .srt
+  .then((conteudos) => conteudos.join("\n")) //junta todos os conteúdos em um único array
+  .then((todoConteudo) => todoConteudo.split("\n")) //separa o conteúdo em um array de linhas
+
+  .then(console.log);
