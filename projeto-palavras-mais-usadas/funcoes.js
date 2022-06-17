@@ -64,6 +64,16 @@ function removerSimbolos(simbolos) {
   };
 }
 
+function mesclarConteudos(array) {
+  return array.join(" ");
+}
+
+function separarTextoPor(simbolo) {
+  return function (texto) {
+    return texto.split(simbolo);
+  };
+}
+
 // exporta as funções para index.js
 module.exports = {
   lerDiretorio,
@@ -74,4 +84,6 @@ module.exports = {
   removerElementosseIncluir,
   removerElementosSeApenasNumeros,
   removerSimbolos,
+  mesclarConteudos,
+  separarTextoPor,
 };
