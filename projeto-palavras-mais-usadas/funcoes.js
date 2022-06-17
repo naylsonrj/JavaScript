@@ -52,6 +52,18 @@ function removerElementosSeApenasNumeros(array) {
   });
 }
 
+function removerSimbolos(simbolos) {
+  return function (array) {
+    return array.map((el) => {
+      let textoSemSimbolos = el;
+      simbolos.forEach((simbolo) => {
+        textoSemSimbolos = textoSemSimbolos.split(simbolo).join("");
+      });
+      return textoSemSimbolos;
+    });
+  };
+}
+
 // exporta as funções para index.js
 module.exports = {
   lerDiretorio,
@@ -61,4 +73,5 @@ module.exports = {
   removerElementosSeVazio,
   removerElementosseIncluir,
   removerElementosSeApenasNumeros,
+  removerSimbolos,
 };
