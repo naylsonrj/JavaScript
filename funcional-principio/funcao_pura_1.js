@@ -11,4 +11,11 @@ const PI = 3.14;
 function areaCircuferencia(raio) {
   return raio * raio * PI;
 }
+
+// Transformando em um função PURA
+function areaCircuferenciaPura(raio, pi) {
+  return raio * raio * pi;
+}
+
 console.log(areaCircuferencia(10));
+console.log(areaCircuferenciaPura(10, Math.PI));
