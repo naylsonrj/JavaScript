@@ -85,6 +85,14 @@ function agruparElementos(palavras) {
   );
 }
 
+function ordernarPorAtributoNumerico(attr, ordem = "asc") {
+  return function (array) {
+    const asc = (a, b) => a[attr] - b[attr];
+    const desc = (a, b) => b[attr] - a[attr];
+    return array.sort(ordem === "asc" ? asc : desc);
+  };
+}
+
 // exporta as funções para index.js
 module.exports = {
   lerDiretorio,
@@ -98,4 +106,5 @@ module.exports = {
   mesclarConteudos,
   separarTextoPor,
   agruparElementos,
+  ordernarPorAtributoNumerico,
 };
