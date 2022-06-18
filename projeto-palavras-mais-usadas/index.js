@@ -10,18 +10,6 @@ const caminho = path.join(__dirname, "./", "legendas");
 
 const simbolos = [".", "-", "?", '""', "\r", ",", "_", "<i>", "</i>", "[", "]", "♪", "(", ")"];
 
-function aguparPalavras(palavras) {
-  return palavras.reduce((agrupamento, palavra) => {
-    const p = palavra.toLowerCase();
-    if (agrupamento[p]) {
-      agrupamento[p] += 1;
-    } else {
-      agrupamento[p] = 1;
-    }
-    return agrupamento;
-  }, {}); //  <== valor inicial objeto vazio
-}
-
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom(".srt"))
   .then(fn.lerArquivos)
@@ -34,5 +22,5 @@ fn.lerDiretorio(caminho)
   .then(fn.mesclarConteudos)
   .then(fn.separarTextoPor(" "))
   .then(fn.removerElementosSeVazio)
-  .then(aguparPalavras)
+  .then(fn.agruparElementos)
   .then(console.log);
