@@ -89,7 +89,7 @@ function ordernarPorAtributoNumerico(attr, ordem = "asc") {
   return function (array) {
     const asc = (a, b) => a[attr] - b[attr];
     const desc = (a, b) => b[attr] - a[attr];
-    return array.sort(ordem === "asc" ? asc : desc);
+    return [...array].sort(ordem === "asc" ? asc : desc);
   };
 }
 
