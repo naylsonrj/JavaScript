@@ -22,6 +22,9 @@ function tipoSeguro(valor) {
         const novoValor = fn(this.valor);
         return tipoSeguro(novoValor);
       }
+    }, //usando flatmap para tirar o .valor
+    flatMap(fn) {
+      return this.map(fn).valor;
     },
   };
 }
@@ -30,5 +33,7 @@ const original = "texto original";
 const alterado = tipoSeguro(original)
   .map((t) => t.toUpperCase())
   .map((t) => `${t} !!!`)
-  .map((t) => t.split("").join("  "));
-console.log(original, alterado.valor);
+  //   .map((t) => t.split("").join("  "));
+  // console.log(original, alterado.valor);
+  .flatMap((t) => t.split("").join("  "));
+console.log(original, alterado); // removido o .valor com flatmap
