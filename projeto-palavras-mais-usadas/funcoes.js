@@ -1,6 +1,18 @@
 const fs = require("fs"); // função que lê o conteúdo de um arquivo
 const path = require("path");
 
+function composicao(...funcoes) {
+  return function (valor) {
+    return funcoes.reduce(async (acc, fn) => {
+      if (Promise.resolve(acc) === acc) {
+        return fn(await acc);
+      } else {
+        return fn(acc);
+      }
+    }, valor);
+  };
+}
+
 function lerDiretorio(caminho) {
   return new Promise((resolve, reject) => {
     try {
@@ -95,6 +107,7 @@ function ordernarPorAtributoNumerico(attr, ordem = "asc") {
 
 // exporta as funções para index.js
 module.exports = {
+  composicao,
   lerDiretorio,
   elementosTerminadosCom,
   lerArquivo,
