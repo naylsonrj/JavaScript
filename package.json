@@ -1,5 +1,24 @@
 {
+  "name": "javascript",
+  "description": "<h1 align=\"center\">Welcome to JavaScript 👋</h1> <p> </p>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naylsonrj/JavaScript.git"
+  },
+  "keywords": [],
   "dependencies": {
-    "readme-md-generator": "^1.0.0"
-  }
+    "readme-md-generator": "^1.0.0",
+    "rxjs": "^7.5.5"
+  },
+  "author": "Naylson Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naylsonrj/JavaScript/issues"
+  },
+  "homepage": "https://github.com/naylsonrj/JavaScript#readme"
 }
