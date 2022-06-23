@@ -1,4 +1,4 @@
-const { observable, Observable, Subscriber } = require("rxjs");
+const { Observable, Subscriber } = require("rxjs");
 
 const promise = new Promise((resolve, reject) => {
   resolve("Exemplo de PROMISE");
