@@ -13,7 +13,8 @@
   "keywords": [],
   "dependencies": {
     "readme-md-generator": "^1.0.0",
-    "rxjs": "^7.5.5"
+    "rxjs": "6.0.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "author": "Naylson Costa",
   "license": "ISC",
