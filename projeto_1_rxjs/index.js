@@ -4,7 +4,7 @@ const _ = require('lodash')
 const { toArray, map } = require('rxjs/operators')
 
 
-const caminho = path.join(__dirname, '..', 'dados', 'legendas')
+const caminho = path.join(__dirname, '..', 'projeto-palavras-mais-usadas', 'legendas')
 
 const simbolos = [
     '.', '?', '-', ',', '"', '♪',
@@ -24,7 +24,7 @@ fn.lerDiretorio(caminho)
         fn.removerElementosSeVazio(),
         fn.removerElementosSeApenasNumero(),
         toArray(),
-        fn.agruparElementos(),
+        fn.agruparElementos(),       
         map(array => _.sortBy(array, el => -el.qtde))
     )
     .subscribe(console.log)

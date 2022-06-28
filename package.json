@@ -12,6 +12,7 @@
   },
   "keywords": [],
   "dependencies": {
+    "lodash": "^4.17.21",
     "readme-md-generator": "^1.0.0",
     "rxjs": "6.0.0",
     "xmlhttprequest": "^1.8.0"
