@@ -7,41 +7,17 @@ function createPipeableOperator(nextGenerator) {
   return function (source) {
     return Observable.create((subscriber) => {
       source.subscribe({
-        next(v) {
-          next: nextGenerator(subscriber);
-        },
+        next: nextGenerator(subscriber),
       });
     });
   };
 }
 
-// primeira maneira de fazer
-// function createPipeableOperator(nextFn) {
-//   return function (source) {
-//     return Observable.create((subscriber) => {
-//       source.subscribe({
-//         next(v) {
-//           nextFn(subscriber, v);
-//         },
-//       });
-//     });
-//   };
-// }
-
 function primeiro() {
-  return createPipeableOperator(function (subscriber) {
-    return function (valor) {
-      subscriber.next(v);
-      subscriber.complete();
-    };
+  return createPipeableOperator((subscriber) => (v) => {
+    subscriber.next(v);
+    subscriber.complete();
   });
-
-  // ==== primeira maneira ====
-  // function primeiro() {
-  //   return createPipeableOperator((subscriber, v) => {
-  //     subscriber.next(v);
-  //     subscriber.complete();
-  //   });
 }
 
 function nenhum() {
