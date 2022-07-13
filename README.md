@@ -2,7 +2,7 @@
 <p>
 </p>
 
-> Meus scripts de JS práticado em diversos cursos, exemplos, tutoriais.
+> Meus scripts de JS práticado em diversos cursos, exemplos, tutoriais....
 
 
 ## Author
