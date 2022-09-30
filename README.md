@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to JavaScript 👋</h1>
+<h1 align="center">JavaScript 👋</h1>
 <p>
 </p>
 
